@@ -1,7 +1,10 @@
 name: Django Backend CI
 
 on: [push, pull_request]
-
+env:
+   STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+   STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
+   STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
 jobs:
   test-and-build:
     runs-on: ubuntu-latest
